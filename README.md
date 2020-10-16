@@ -31,6 +31,7 @@ The [Gazelle installation guides](https://github.com/WhatCD/Gazelle/wiki/Gazelle
         ./configure
         make
         make install
+> 执行make时如果出现```line 81: aclocal-1.15: command not found```类似错误，可以执行```autoreconf -f -i```
 
 ## Running Ocelot
 
