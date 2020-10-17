@@ -302,7 +302,7 @@ void mysql::flush_users() {
 	std::lock_guard<std::mutex> uq_lock(user_queue_lock);
 	size_t qsize = user_queue.size();
 	if (verbose_flush || qsize > 0) {
-		std::cout << "User flush queue size: " << qsize << ", next query length: " << user_queue.front().size() << std::endl;
+		std::cout << "User flush queue size: " << qsize << std::endl;
 	}
 	if (update_user_buffer == "") {
 		return;
@@ -327,7 +327,7 @@ void mysql::flush_torrents() {
 	std::lock_guard<std::mutex> tq_lock(torrent_queue_lock);
 	size_t qsize = torrent_queue.size();
 	if (verbose_flush || qsize > 0) {
-		std::cout << "Torrent flush queue size: " << qsize << ", next query length: " << torrent_queue.front().size() << std::endl;
+		std::cout << "Torrent flush queue size: " << qsize << std::endl;
 	}
 	if (update_torrent_buffer == "") {
 		return;
@@ -356,7 +356,7 @@ void mysql::flush_snatches() {
 	std::lock_guard<std::mutex> sq_lock(snatch_queue_lock);
 	size_t qsize = snatch_queue.size();
 	if (verbose_flush || qsize > 0) {
-		std::cout << "Snatch flush queue size: " << qsize << ", next query length: " << snatch_queue.front().size() << std::endl;
+		std::cout << "Snatch flush queue size: " << qsize << std::endl;
 	}
 	if (update_snatch_buffer == "" ) {
 		return;
@@ -380,7 +380,7 @@ void mysql::flush_peers() {
 	std::lock_guard<std::mutex> pq_lock(peer_queue_lock);
 	size_t qsize = peer_queue.size();
 	if (verbose_flush || qsize > 0) {
-		std::cout << "Peer flush queue size: " << qsize << ", next query length: " << peer_queue.front().size() << std::endl;
+		std::cout << "Peer flush queue size: " << qsize << std::endl;
 	}
 
 	// Nothing to do
@@ -436,7 +436,7 @@ void mysql::flush_tokens() {
 	std::lock_guard<std::mutex> tq_lock(token_queue_lock);
 	size_t qsize = token_queue.size();
 	if (verbose_flush || qsize > 0) {
-		std::cout << "Token flush queue size: " << qsize << ", next query length: " << token_queue.front().size() << std::endl;
+		std::cout << "Token flush queue size: " << qsize << std::endl;
 	}
 	if (update_token_buffer == "") {
 		return;
